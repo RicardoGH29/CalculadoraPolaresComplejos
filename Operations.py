@@ -4,12 +4,8 @@ from math import sqrt, atan
 
 
 def convertToPolar(complexNumber):
-    realPart = complexNumber.real
-    imaginaryPart = complexNumber.imag
-    module = sqrt(realPart ** 2 + imaginaryPart ** 2)
-    angle = (atan((imaginaryPart / realPart)) * 57.2958)
-    #if angle < 0:
-        #angle = 180 + angle
+    module, angleRad = cmath.polar(complexNumber)
+    angle = math.degrees(angleRad)
     return module, angle
 
 
